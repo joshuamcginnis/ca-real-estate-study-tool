@@ -45,7 +45,7 @@ for i in range(total_rows):
     stats['percent'] = "{0:.0f}%".format( (stats['correct'] / questions_answered) * 100 )
     print "\n**** %s (%s/%s - %s) ****" % (status, stats['correct'], questions_answered, stats['percent'])
 
-    if answer == row['answer']: print "\n", row['hint'] 
+    if answer != row['answer']: print "\n", row['hint'] 
 
     questions_answered += 1
     raw_input()
