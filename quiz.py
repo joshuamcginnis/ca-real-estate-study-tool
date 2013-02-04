@@ -16,6 +16,7 @@ total_rows = len(rows)
 
 stats = {"correct": 0, "incorrect": 0, "percent": 0}
 
+questions_answered = 1 
 for i in range(total_rows):
     r = randint(0, total_rows-1)
     row = rows[r]
@@ -30,21 +31,23 @@ for i in range(total_rows):
     choices = {'a': '1', 'b': '2', 'c': '3', 'd': '4'}
     answer = raw_input("\nYour Answer: ")
     
-    if answer in choices:
-        answer = str(choices[answer])
-    else:
-        answer = 'wrong'
+    answer = str(choices[answer]) if answer in choices else 'wrong'
+
+    stats['percent'] = (stats['correct'] / questions_answered) * 100
  
     if answer == row['answer']:
         stats['correct'] += 1
-        if stats['incorrect'] != 0: stats['percent'] = (stats['correct'] / stats['incorrect']) * 100
-        print "\n**** CORRECT (%s/%s - %s%%) ****" % (stats['correct'], stats['incorrect'], stats['percent'])
-                
+        status = "CORRECT"
     else:
         stats['incorrect'] += 1
-        print "\n**** INCORRECT (%s/%s - %s%%) ****" % (stats['correct'], stats['incorrect'], stats['percent'])
-        print "\n", row['hint'] 
+        status = "INCORRECT"
 
+    stats['percent'] = "{0:.0f}%".format( (stats['correct'] / questions_answered) * 100 )
+    print "\n**** %s (%s/%s - %s) ****" % (status, stats['correct'], questions_answered, stats['percent'])
+
+    if answer == row['answer']: print "\n", row['hint'] 
+
+    questions_answered += 1
     raw_input()
 
 f.close()
