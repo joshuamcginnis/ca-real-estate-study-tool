@@ -37,7 +37,7 @@ for i in range(total_rows):
  
     if answer == row['answer']:
         stats['correct'] += 1
-        stats['percent'] = (stats['correct'] / stats['incorrect']) * 100
+        if stats['incorrect'] != 0: stats['percent'] = (stats['correct'] / stats['incorrect']) * 100
         print "\n**** CORRECT (%s/%s - %s%%) ****" % (stats['correct'], stats['incorrect'], stats['percent'])
                 
     else:
