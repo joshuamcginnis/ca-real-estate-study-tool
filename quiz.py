@@ -22,6 +22,7 @@ for i in range(total_rows):
     row = rows[r]
 
     print "----------------------------------------"
+    print "[%s]" % row['category']
     print row['question'], "\n"
     print '  a: %s' % row['option1']
     print '  b: %s' % row['option2']
