@@ -5,6 +5,9 @@ from random import randint
 from os import system
 import time
 import re
+import sys
+
+category = sys.argv[1] if len(sys.argv) > 1 else None 
 
 f = open('data.csv', 'rb')
 
@@ -20,6 +23,12 @@ questions_answered = 1
 for i in range(total_rows):
     r = randint(0, total_rows-1)
     row = rows[r]
+
+    if category is not None:
+        if category != row['category']:
+            continue;
+    
+#    system("clear")
 
     print "----------------------------------------"
     print "[%s]" % row['category']
