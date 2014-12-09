@@ -1,4 +1,4 @@
-Python Command-line CA Real Estate Exam Study Tool
+Python CLI-based CA Real Estate Exam Study Tool
 =====
 This is just a super simple tool that reads a CSV of a 2000+ questions,
 answers for the California Real Estate Salesperson exam.
