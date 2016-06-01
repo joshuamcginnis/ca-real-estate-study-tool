@@ -7,8 +7,11 @@ There are currently 2000+ questions in the database.
 Usage
 -----
 ```zsh
-bundle #install gems
-ruby practice.rb
+# install gems
+> bundle install
+
+# ...go!
+> ruby practice.rb
 ```
 
 In Action
