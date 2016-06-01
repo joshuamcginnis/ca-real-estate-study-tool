@@ -2,30 +2,40 @@ require 'csv'
 require 'colorize'
 
 module CaliforniaRealEstateExamPrep
-
   class PracticeExam
-
     QUESTIONS_DATABASE = 'database.csv'
-    COLUMN_HEADERS = ['subject', 'question', 'answer_a', 'answer_b', 'answer_c', 'answer_d', 'hint']
 
     def initialize
       @progress = { correct: 0, incorrect: 0 }
 
-      rows = CSV.read(QUESTIONS_DATABASE, { headers: :first_row })
-      row_count = rows.count
       while true
-        random_row_index = Random.new.rand(0...row_count)
-        random_row = rows[random_row_index]
-        print_question_from_row(random_row)
-        answer = gets.chomp
-        check_answer(random_row, answer)
+        question = generate_question
+        check_answer(question)
         print_exam_progress
       end
     end
 
     private
 
-    def check_answer(row, answer)
+    def generate_question
+      random_row = select_random_row
+      print_question_from_row(random_row)
+      random_row
+    end
+
+    def select_random_row
+      row_count = all_rows.count
+      random_row_index = Random.new.rand(0...row_count)
+      all_rows[random_row_index]
+    end
+
+    def all_rows
+      @all_rows ||= CSV.read(QUESTIONS_DATABASE, { headers: :first_row })
+    end
+
+    def check_answer(row)
+      answer = gets.chomp
+
       if answer == row['answer']
         @progress[:correct] += 1
         print_correct_answer
