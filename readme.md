@@ -1,5 +1,5 @@
-California Real Estate Salesperson / Broker Exam Prep CLI Tool
-=====
+CA Real Estate Exam Prep App
+=======
 This is a tool that you can run from your favorite terminal to study for the
 California Salesperson or Broker's license exam.
 
