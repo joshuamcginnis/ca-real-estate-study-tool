@@ -13,6 +13,6 @@ ruby practice.rb
 
 In Action
 -----
-![Exam Prep App](https://raw.githubusercontent.com/joshuamcginnis/ca-real-estate-study-tool/master/screenshot.png)
+![Exam Prep App](https://raw.githubusercontent.com/joshuamcginnis/ca-real-estate-study-tool/master/screenshot.png =630x600)
 
 
