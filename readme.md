@@ -1,27 +1,18 @@
-Python CLI-based CA Real Estate Exam Study Tool
+A command-line tool for preparing for the California Real Estate Salesperson / Broker Exam.
 =====
-This is just a super simple tool that reads a CSV of a 2000+ questions,
-answers for the California Real Estate Salesperson exam.
+This is a tool that you can run from your favorite terminal to study for the
+California Salesperson or Broker's license exam.
 
+There are currently 2000+ questions in the database.
 Usage
 -----
-    python quiz.py
+```zsh
+bundle #install gems
+ruby practice.rb
+```
 
-Example
+How it Works
+![Exam Prep App](https://raw.githubusercontent.com/joshuamcginnis/ca-real-estate-study-tool/master/screenshot.png)
 -----
-    $ python quiz.py
-    ----------------------------------------
-    When a state official sells his home, which of the following must be given to the buyer? 
 
-    a: Trustee disclosure
-    b: Transfer disclosure statement
-    c: Promissory note
-    d: Termite report
-
-    Your Answer: a
-
-    **** INCORRECT (0/1 - 0%) ****
-
-    Correct answer is (b).
-    A transfer disclosure statement is required for all sellers of real property (1-4 residential units) in California.
 
